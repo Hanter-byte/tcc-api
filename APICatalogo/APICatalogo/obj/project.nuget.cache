@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NkiJoiA/teCnK2DTEZtDv+W9Zbovn8XBE0ke9HDmKiz8dbuj1WRgAy0vzTXErgcinLZRqtaSuwQgU2s6jqttMg==",
+  "dgSpecHash": "or5QRC1bOjMXmlFaOFyPOdK6qKJ8k3A54oiVrQnIGkaorMoKLjfUxnCSzcnsZTeqCkNIrjTnnzNKsl1xXf37Kg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joao.psilva\\Desktop\\APITCC\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
+  "projectFilePath": "C:\\Users\\joao.psilva\\Desktop\\tcc-api\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joao.psilva\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",

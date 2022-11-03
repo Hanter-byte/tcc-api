@@ -1041,11 +1041,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joao.psilva\\Desktop\\APITCC\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
+      "projectUniqueName": "C:\\Users\\joao.psilva\\Desktop\\tcc-api\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
       "projectName": "APICatalogo",
-      "projectPath": "C:\\Users\\joao.psilva\\Desktop\\APITCC\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
+      "projectPath": "C:\\Users\\joao.psilva\\Desktop\\tcc-api\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
       "packagesPath": "C:\\Users\\joao.psilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joao.psilva\\Desktop\\APITCC\\APICatalogo\\APICatalogo\\obj\\",
+      "outputPath": "C:\\Users\\joao.psilva\\Desktop\\tcc-api\\APICatalogo\\APICatalogo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joao.psilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
