@@ -3,6 +3,7 @@ using System;
 using APICatalogo.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APICatalogo.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221104140055_Cliente")]
+    partial class Cliente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,7 +44,7 @@ namespace APICatalogo.Migrations
 
             modelBuilder.Entity("APICatalogo.Models.Cliente", b =>
                 {
-                    b.Property<int>("ClienteId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -59,7 +61,7 @@ namespace APICatalogo.Migrations
                     b.Property<int>("Telefone")
                         .HasColumnType("int");
 
-                    b.HasKey("ClienteId");
+                    b.HasKey("Id");
 
                     b.ToTable("Clientes");
                 });

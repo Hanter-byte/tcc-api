@@ -28,6 +28,7 @@ public class Produto
     public float Estoque { get; set; }
     public DateTime DataCadastro { get; set; }
     public int CategoriaId { get; set; } // foreign key
+
     [JsonIgnore]
     public Categoria? Categoria { get; set; }
 }
