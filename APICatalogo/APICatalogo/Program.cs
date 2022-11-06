@@ -14,6 +14,10 @@ builder.Services.AddSwaggerGen();
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");//Obtenção da String de Conexão
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));//Registro do contexto do EF no Conteiner
 
+#region[Cors]
+builder.Services.AddCors(); //Liberação Cors, erro ao acessar API por navegador
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +26,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+#region[Cors]
+app.UseCors(c =>
+{
+    c.AllowAnyHeader();
+    c.AllowAnyMethod();
+    c.AllowAnyOrigin();
+});
+#endregion
 
 app.UseHttpsRedirection();
 

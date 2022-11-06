@@ -7,7 +7,6 @@ namespace APICatalogo.Models; //novo recurso ";"
 [Table("Categorias")]
 public class Categoria
 {
-
     public Categoria()
     {
         Produtos = new Collection<Produto>();

@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APICatalogo.Models
 {
+    [Table("Clientes")]
     public class Cliente
     {
         [Key]
@@ -9,12 +11,12 @@ namespace APICatalogo.Models
 
         [Required]
         [StringLength(80)]
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
 
         [Required]
         [EmailAddress]
         [StringLength(100)]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
         public int  Telefone { get; set; }
