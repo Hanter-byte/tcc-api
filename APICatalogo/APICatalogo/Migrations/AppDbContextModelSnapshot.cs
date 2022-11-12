@@ -106,13 +106,13 @@ namespace APICatalogo.Migrations
 
             modelBuilder.Entity("APICatalogo.Models.Produto", b =>
                 {
-                    b.HasOne("APICatalogo.Models.Categoria", "Categoria")
+                    b.HasOne("APICatalogo.Models.Categoria", "Categorias")
                         .WithMany("Produtos")
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Categoria");
+                    b.Navigation("Categorias");
                 });
 
             modelBuilder.Entity("APICatalogo.Models.Categoria", b =>

@@ -30,5 +30,5 @@ public class Produto
     public int CategoriaId { get; set; } // foreign key
 
     [JsonIgnore]
-    public Categoria? Categoria { get; set; }
+    public Categoria? Categorias { get; set; }
 }
