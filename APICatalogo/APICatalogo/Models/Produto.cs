@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -16,7 +17,7 @@ public class Produto
 
     [Required]
     [StringLength(300)]
-    public string? Descricao  { get; set; }
+    public String? Descricao  { get; set; }
 
     [Required]
     [Column(TypeName = "decimal(10,2)")]
@@ -25,8 +26,10 @@ public class Produto
     [Required]
     [StringLength(300)]
     public String? ImagemUrl { get; set; }
+    [Required]
     public float Estoque { get; set; }
     public DateTime DataCadastro { get; set; }
+    [Required]
     public int CategoriaId { get; set; } // foreign key
 
     [JsonIgnore]
