@@ -23,10 +23,12 @@ public class Manutencao
     public decimal Preco { get; set; }
 
     public DateTime DataCadastro { get; set; }
-    [Required]
-    public int ClienteId { get; set; }
+
     [Required]
     public int ProdutoId { get; set; }
+
+    [Required]
+    public int ClienteId { get; set; }
 
     [JsonIgnore]
     public Cliente? Cliente { get; set; }

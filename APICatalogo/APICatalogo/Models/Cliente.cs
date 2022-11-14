@@ -10,6 +10,10 @@ namespace APICatalogo.Models
         public int ClienteId { get; set; }
 
         [Required]
+        [StringLength(11)]
+        public string? Cpf { get; set; }
+
+        [Required]
         [StringLength(80)]
         public string? Nome { get; set; }
 
