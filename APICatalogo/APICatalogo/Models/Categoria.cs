@@ -18,6 +18,8 @@ public class Categoria
     [StringLength(80)]
     public String? Nome { get; set; } //? identifica as propriedades como nulas
 
+    public DateTime DataCadastro { get; set; }
+
     [Required]
     [StringLength(300)]
     public String? ImagemUrl { get; set; }

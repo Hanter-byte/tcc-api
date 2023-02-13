@@ -25,6 +25,9 @@ namespace APICatalogo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("ImagemUrl")
                         .IsRequired()
                         .HasMaxLength(300)
@@ -50,6 +53,9 @@ namespace APICatalogo.Migrations
                         .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("varchar(11)");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
                         .IsRequired()

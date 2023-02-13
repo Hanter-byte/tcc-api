@@ -5,67 +5,66 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlTypes;
 
-namespace APICatalogo.Controllers
+namespace APICatalogo.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class ManutencoesController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ManutencoesController : ControllerBase
+    private readonly AppDbContext _context;
+
+    public ManutencoesController(AppDbContext context)
     {
-        private readonly AppDbContext _context;
+        _context = context;
+    }
+    [HttpGet]
+    public ActionResult<IEnumerable<Manutencao>> Get()
+    {
+        return _context.Manutencaos.ToList();
+    }
+    [HttpGet("{id:int}", Name = "ObterManutencao")]
+    public ActionResult<Manutencao> Get(int id)
+    {
+        var manutencao = _context.Manutencaos.FirstOrDefault(p => p.ManutencaoId == id);
+        if (manutencao is null)
+        {
+            return NotFound("Manutenção não encontrada...");
+        }
+        return manutencao;
+    }
+    [HttpPost]
+    public ActionResult Post(Manutencao manutencao)
+    {
+        if (manutencao is null)
+            return BadRequest();
+        _context.Manutencaos.Add(manutencao);
+        _context.SaveChanges();
 
-        public ManutencoesController(AppDbContext context)
+        return new CreatedAtRouteResult("ObterManutencao", new { id = manutencao.ManutencaoId}, manutencao);
+    }
+    [HttpPut("{id:int}")]
+    public ActionResult Put(int id, Manutencao manutencao)
+    {
+        if (id != manutencao.ManutencaoId)
         {
-            _context = context;
+            return BadRequest();
         }
-        [HttpGet]
-        public ActionResult<IEnumerable<Manutencao>> Get()
-        {
-            return _context.Manutencaos.ToList();
-        }
-        [HttpGet("{id:int}", Name = "ObterManutencao")]
-        public ActionResult<Manutencao> Get(int id)
-        {
-            var manutencao = _context.Manutencaos.FirstOrDefault(p => p.ManutencaoId == id);
-            if (manutencao is null)
-            {
-                return NotFound("Manutenção não encontrada...");
-            }
-            return manutencao;
-        }
-        [HttpPost]
-        public ActionResult Post(Manutencao manutencao)
-        {
-            if (manutencao is null)
-                return BadRequest();
-            _context.Manutencaos.Add(manutencao);
-            _context.SaveChanges();
+        _context.Entry(manutencao).State = EntityState.Modified;
+        _context.SaveChanges();
 
-            return new CreatedAtRouteResult("ObterManutencao", new { id = manutencao.ManutencaoId}, manutencao);
-        }
-        [HttpPut("{id:int}")]
-        public ActionResult Put(int id, Manutencao manutencao)
+        return Ok(manutencao);
+    }
+    [HttpDelete("{id:int}")]
+    public ActionResult Delete(int id)
+    {
+        var manutencao = _context.Manutencaos.FirstOrDefault(p => p.ManutencaoId == id);
+        if (manutencao is null)
         {
-            if (id != manutencao.ManutencaoId)
-            {
-                return BadRequest();
-            }
-            _context.Entry(manutencao).State = EntityState.Modified;
-            _context.SaveChanges();
-
-            return Ok(manutencao);
+            return NotFound("Manutenção não localizada...");
         }
-        [HttpDelete("{id:int}")]
-        public ActionResult Delete(int id)
-        {
-            var manutencao = _context.Manutencaos.FirstOrDefault(p => p.ManutencaoId == id);
-            if (manutencao is null)
-            {
-                return NotFound("Manutenção não localizada...");
-            }
-            _context.Manutencaos.Remove(manutencao);
-            _context.SaveChanges();
+        _context.Manutencaos.Remove(manutencao);
+        _context.SaveChanges();
 
-            return Ok(manutencao);
-        }
+        return Ok(manutencao);
     }
 }
