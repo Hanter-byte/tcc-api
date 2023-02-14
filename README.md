@@ -31,7 +31,7 @@ O sistema foi desenvolvido com o objetivo de informatizar o cadastro de produtos
 - ReactJS
 
 ## Implantação em produção
-- Banco de dados: Postgresql
+- Banco de dados: MySql
 
 # Como executar o projeto
 
