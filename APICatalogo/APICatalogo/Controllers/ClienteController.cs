@@ -21,7 +21,7 @@ public class ClientesController : ControllerBase
     {
         return _context.Clientes.ToList();
     }
-    [HttpGet("{id:int}", Name = "ObterClientes")]
+    [HttpGet("{id:int:min(1)}", Name = "ObterClientes")]
     public ActionResult<Cliente> Get(int id)
     {
         var cliente = _context.Clientes.FirstOrDefault(p => p.ClienteId == id);

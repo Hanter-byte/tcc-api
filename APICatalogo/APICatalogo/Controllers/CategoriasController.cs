@@ -18,11 +18,12 @@ public class CategoriasController : ControllerBase
         _context = context;
     }
     [HttpGet]
+
     public ActionResult<IEnumerable<Categoria>> Get()
     {
         return _context.Categorias.ToList();
     }
-    [HttpGet("{id:int}", Name = "ObterCategoria")]
+    [HttpGet("{id:int:min(1)}", Name = "ObterCategoria")] //Restrição para não executar o restante da requisição
     public ActionResult<Categoria> Get(int id)
     {
         var categoria = _context.Categorias.FirstOrDefault(p => p.CategoriaId == id);

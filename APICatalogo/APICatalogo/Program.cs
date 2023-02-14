@@ -37,9 +37,6 @@ app.UseCors(c =>
 #endregion
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

@@ -22,7 +22,7 @@ public class ManutencoesController : ControllerBase
     {
         return _context.Manutencaos.ToList();
     }
-    [HttpGet("{id:int}", Name = "ObterManutencao")]
+    [HttpGet("{id:int:min(1)}", Name = "ObterManutencao")]
     public ActionResult<Manutencao> Get(int id)
     {
         var manutencao = _context.Manutencaos.FirstOrDefault(p => p.ManutencaoId == id);
